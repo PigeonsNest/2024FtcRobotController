@@ -122,7 +122,6 @@ public class MotorTest extends LinearOpMode {
             rightBackDrive.setPower(0.5);
             sleep(5000);
             rightBackDrive.setPower(0);
-            telemetry.addData("Encoder", );
 
 
 
