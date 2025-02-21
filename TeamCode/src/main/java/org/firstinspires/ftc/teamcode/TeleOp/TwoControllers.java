@@ -165,7 +165,7 @@ public class TwoControllers extends LinearOpMode {
             double Shoulder_Forward = gamepad2.right_trigger;
             double Shoulder_Backward = -gamepad2.left_trigger;
             double Forearm_Movement = gamepad2.right_stick_y*-1;
-            double  Claw_Position = gamepad2.left_stick_x;
+            double  Claw_Position = gamepad2.left_stick_x; // JAK: possible left_stick values == -1 through 1
 
 
 
@@ -181,6 +181,14 @@ public class TwoControllers extends LinearOpMode {
             max = Math.max(Math.abs(leftFrontPower), Math.abs(rightFrontPower));
             max = Math.max(max, Math.abs(leftBackPower));
             max = Math.max(max, Math.abs(rightBackPower));
+
+            // JAK, so the problem is that we need to translate the left stick values of 0-100 into
+            // values of 0.8 to 1. I.e., 50 => 0.1
+            // THE MATH GOES:
+            // clawPosition * (1 - clawMinimum) + clawMinimum
+            // This is because clawPosition is gamepad2.left_stick_x
+            // JAK: then call
+            // servo.setPosition();
 
             //claw
             if (Claw_Position < 0){
@@ -199,7 +207,6 @@ public class TwoControllers extends LinearOpMode {
             shoulderRight.setPower(upperArmPower);
             //Forearm Power
             forearm.setPower(Forearm_Movement);
-
             //up
 //            if(gamepad2.right_trigger > 0){
 //                shoulderLeft.setPower(gamepad2.right_trigger*0.6);
