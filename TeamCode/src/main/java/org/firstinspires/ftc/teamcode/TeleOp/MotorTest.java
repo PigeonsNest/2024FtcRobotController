@@ -119,35 +119,35 @@ public class MotorTest extends LinearOpMode {
             waitForStart();
             runtime.reset();
 
+            // HEY,
+            // To test more motors, change "rightBackDrive" to the name of the motor you want to test
             rightBackDrive.setPower(0.5);
             sleep(5000);
             rightBackDrive.setPower(0);
-
-
-
-            // Motor 00
-            if(gamepad1.a) {
-                leftFrontDrive.setPower(0.5);
-            }
-            // Motor 01
-            if(gamepad1.b){
-                leftBackDrive.setPower(0.5);
-            }
-            // Motor 02
-            if(gamepad1.x) {
-                rightFrontDrive.setPower(0.5);
-
-            }
-            // Motor 03
-            if(gamepad1.y){
-                rightBackDrive.setPower(0.5);
-            }
-            if (gamepad1.left_bumper) {
-                leftFrontDrive.setPower(0);
-                leftBackDrive.setPower(0);
-                rightFrontDrive.setPower(0);
-                rightBackDrive.setPower(0);
-            }
+//
+//            // Motor 00
+//            if(gamepad1.a) {
+//                leftFrontDrive.setPower(0.5);
+//            }
+//            // Motor 01
+//            if(gamepad1.b){
+//                leftBackDrive.setPower(0.5);
+//            }
+//            // Motor 02
+//            if(gamepad1.x) {
+//                rightFrontDrive.setPower(0.5);
+//
+//            }
+//            // Motor 03
+//            if(gamepad1.y){
+//                rightBackDrive.setPower(0.5);
+//            }
+//            if (gamepad1.left_bumper) {
+//                leftFrontDrive.setPower(0);
+//                leftBackDrive.setPower(0);
+//                rightFrontDrive.setPower(0);
+//                rightBackDrive.setPower(0);
+//            }
         }
 
 
