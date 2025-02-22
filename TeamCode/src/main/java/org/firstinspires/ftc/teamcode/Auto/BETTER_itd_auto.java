@@ -129,7 +129,7 @@ public class BETTER_itd_auto extends LinearOpMode {
         shoulder_left.setPower(ARM_SPEED);
         shoulder_right.setPower(ARM_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 5.0)) {
             telemetry.addData("Arm Moved", "Leg 5: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
 
